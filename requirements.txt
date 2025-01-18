@@ -1,0 +1,10 @@
+pymupdf
+langchain
+openai
+chromadb
+pyyaml
+python-dotenv
+langchain-community
+tiktoken
+langchain-chroma
+langchain-openai
