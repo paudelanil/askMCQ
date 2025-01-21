@@ -1,34 +1,51 @@
-from langchain.prompts import PromptTemplate
-from langchain_core.runnables import RunnablePassthrough
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from langchain_openai import ChatOpenAI
-from src.vector_db import initialize_chroma
-from src.embeddings import get_embedding_function
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
+import json
+from typing import List, Dict
 import yaml
-from typing import List, Tuple
+import re
 
-def load_config():
-    """
-    Loads configuration from config.yaml.
-    """
-    with open("config/config.yaml", "r") as file:
-        config = yaml.safe_load(file)
-    return config
 
 class RetrievalAgent:
-    def __init__(self):
-        config = load_config()
-        self.vector_store = initialize_chroma()  # Use LangChain's Chroma
+    def __init__(self, config_path: str = "config/config.yaml"):
+        """
+        Initializes the RetrievalAgent with configuration and components.
+        """
+        self.config = self._load_config(config_path)
+        self.vector_store = self._initialize_chroma()
         self.llm = ChatOpenAI(
-            model=config["openai"]["llm_model"],
-            api_key=config["openai"]["api_key"]
+            model=self.config["openai"]["llm_model"],
+            api_key=self.config["openai"]["api_key"],
+            temperature=0.1
         )
-        self.prompt_template = self._create_prompt_template()
+        self.chain = self._create_chain()
 
-    def _create_prompt_template(self):
+    def _load_config(self, config_path: str) -> Dict:
         """
-        Creates a prompt template for answering MCQs.
+        Loads configuration from a YAML file.
         """
-        template = """
+        with open(config_path, "r") as file:
+            return yaml.safe_load(file)
+
+    def _initialize_chroma(self):
+        """
+        Initializes the Chroma vector store.
+        """
+        embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+        return Chroma(
+            persist_directory=self.config["chroma"]["persist_directory"],
+            embedding_function=embeddings
+        )
+
+    def _create_chain(self):
+        """
+        Creates the LCEL chain for question answering.
+        """
+        prompt_template = ChatPromptTemplate.from_template("""
         You are an expert at answering multiple-choice questions (MCQs). Use the following context to answer the question.
 
         Context:
@@ -40,49 +57,70 @@ class RetrievalAgent:
         Options:
         {options}
 
-        Provide the correct answer and a detailed reasoning for your choice.
+        Provide the correct answer as a single letter (A-D) and a detailed reasoning for your choice.
         Correct Answer: 
         Reasoning:
-        """
-        return PromptTemplate(
-            input_variables=["context", "question", "options"],
-            template=template
-        )
+        """)
 
-    def retrieve_context(self, query: str, top_k: int = 3) -> List[Tuple[str, float]]:
-        """
-        Retrieves relevant context for a query using LangChain's Chroma.
-        """
-        results = self.vector_store.similarity_search_with_score(query, k=top_k)
-        return [(result[0].page_content, result[1]) for result in results]
-
-    def answer_mcq(self, question: str, options: List[str]) -> str:
-        """
-        Answers an MCQ using retrieved context and reasoning.
-        """
-        # Retrieve relevant context
-        context_results = self.retrieve_context(question)
-        context = " ".join([chunk for chunk, _ in context_results])
-
-        # Format options
-        options_str = "\n".join([f"{i+1}. {opt}" for i, opt in enumerate(options)])
-
-        # Create a RunnableSequence for the LLM chain
-        chain = (
-            RunnablePassthrough.assign(context=lambda x: context)
-            | self.prompt_template
+        return (
+            {
+                "context": RunnableLambda(lambda x: self.vector_store.similarity_search(x["question"], k=3)),
+                "question": RunnablePassthrough(),
+                "options": RunnableLambda(lambda x: "\n".join([f"{i+1}. {opt}" for i, opt in enumerate(x["options"])])),
+            }
+            | prompt_template
             | self.llm
+            | StrOutputParser()
         )
+    def parse_model_response(self,response_text):
+        """Extracts the model's letter answer and converts to index"""
+        match = re.search(r'Correct Answer:\s*([A-D])', response_text, re.IGNORECASE)
+        if not match:
+            return None, None
+        
+        letter = match.group(1).upper()
+        letter_to_idx = {'A': 1, 'B': 2, 'C': 3, 'D': 4}
+        return letter, letter_to_idx.get(letter)
 
-        # Invoke the chain
-        response = chain.invoke({
-            "question": question,
-            "options": options_str
-        })
 
-        # Add retrieved context to the response
-        response += "\n\nRetrieved Context:\n"
-        for chunk, score in context_results:
-            response += f"- {chunk} (Score: {1 - score:.2f})\n"  # Convert distance to similarity score
+    def process_questions(self, questions_data: List[Dict]):
+        """
+        Processes a list of questions and saves the results.
+        """
+        results = []
+        for question_data in questions_data:
+            try:
+                # Retrieve context
+                retrieved_docs = self.vector_store.similarity_search_with_score(question_data["question"], k=3)
+                # Join document content and scores into a single string
+                context = "\n".join([f"{doc.page_content} (Score: {score:.4f})" for doc, score in retrieved_docs])
+                # Print retrieved context
+                print(f"\nRetrieved Context for Question: {question_data['question']}")
+                print(context)
+                print("=" * 50)
 
-        return response
+                # Invoke the chain
+                response = self.chain.invoke(question_data)
+                print(response)
+
+                # Parse the response
+                # model_answer = response.split("Correct Answer:")[1].split()[0].strip()
+                model_letter, model_idx = self.parse_model_response(response)
+                reasoning = response.split("Reasoning:")[1].strip()
+
+                results.append({
+                "question": question_data["question"],
+                "context": context,
+                "model_answer": model_letter,
+                "model_answer_idx": model_idx,
+                "correct_answer_text": question_data["correct_answer_text"],
+                "correct_answer_idx": question_data["correct_answer_idx"],
+                "reasoning": reasoning,
+                "is_correct": None  # Will be updated during evaluation
+            })
+            except Exception as e:
+                print(f"Error processing question: {question_data['question']}")
+                print(f"Error: {str(e)}")
+
+        return results
+    

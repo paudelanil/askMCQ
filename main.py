@@ -1,67 +1,77 @@
 import os
 import json
-from src.pdf_parser import parse_pdf, split_text
-from src.vector_db import initialize_chroma, upsert_documents
 from src.retrieval_agent import RetrievalAgent
+from sklearn.metrics import confusion_matrix
+import pandas as pd
 
-def process_pdf(file_path):
+
+def evaluate_model(questions_data):
     """
-    Processes a PDF file and indexes it into Chroma.
+    Evaluates the model's performance and computes accuracy and confusion matrix.
     """
-    # Parse PDF
-    text = parse_pdf(file_path)
-    
-    # Split text into chunks
-    chunks = split_text(text)
-    
-    # Initialize Chroma and upsert documents
-    vector_store = initialize_chroma()
-    upsert_documents(vector_store, chunks)
+    total = 0
+    correct = 0
+    y_true = []  # Ground truth labels
+    y_pred = []  # Predicted labels
 
-def load_questions(json_file_path: str):
-    """
-    Loads questions and options from a JSON file.
-    """
-    with open(json_file_path, "r") as file:
-        data = json.load(file)
-    return data
-
-def main():
-    # Directory containing PDFs
-    # pdf_directory = "data/raw"
-
-    # # Process each PDF (if not already processed)
-    # for filename in os.listdir(pdf_directory):
-    #     if filename.endswith(".pdf"):
-    #         file_path = os.path.join(pdf_directory, filename)
-    #         print(f"Processing: {filename}")
-    #         process_pdf(file_path)
-
-    # Initialize Retrieval Agent
-    agent = RetrievalAgent()
-
-    # Load questions from JSON file
-    json_file_path = "question.json"  # Path to the JSON file
-    questions_data = load_questions(json_file_path)
-
-    # Answer each question
-    for question_data in questions_data:
-        question = question_data.get("question")
-        options = question_data.get("options")
-
-        if not question or not options:
-            print(f"Skipping invalid question: {question_data}")
+    for q in questions_data:
+        # Ensure required fields exist
+        if "correct_answer_idx" not in q or "model_answer_idx" not in q:
+            print(f"Skipping question (missing fields): {q['question']}")
             continue
 
-        print(f"\nQuestion: {question}")
-        print("Options:")
-        for i, option in enumerate(options, start=1):
-            print(f"{i}. {option}")
+        # Compare with ground truth
+        is_correct = (q["model_answer_idx"] == q["correct_answer_idx"])
+        q["is_correct"] = is_correct
 
-        # Get answer with reasoning
-        answer = agent.answer_mcq(question, options)
-        print("\nAnswer:")
-        print(answer)
+        # Update metrics
+        total += 1
+        if is_correct:
+            correct += 1
 
+        # Append to confusion matrix data
+        y_true.append(q["correct_answer_idx"])
+        y_pred.append(q["model_answer_idx"])
+
+    # Compute confusion matrix
+    confusion = confusion_matrix(y_true, y_pred, labels=[1, 2, 3, 4])
+    confusion_df = pd.DataFrame(
+        confusion,
+        index=["True A", "True B", "True C", "True D"],
+        columns=["Pred A", "Pred B", "Pred C", "Pred D"]
+    )
+
+    return {
+        "accuracy": correct / total if total > 0 else 0,
+        "total": total,
+        "correct": correct,
+        "confusion_matrix": confusion_df.to_dict()
+    }
+
+def main():
+
+    # Load questions from JSON
+    with open("notebook/question_asthma.json", "r") as f:
+        questions_data = json.load(f)
+
+    # Initialize the RetrievalAgent
+    agent = RetrievalAgent()
+
+    # Process questions
+    results =  agent.process_questions(questions_data[0:1])
+
+    evaluation_metrics = evaluate_model(results)
+
+    # Add evaluation metrics to the results
+    results.append({
+        "evaluation_metrics": evaluation_metrics
+    })
+
+    # Save results
+    with open('results.json', "w") as f:
+        json.dump(results, f, indent=2)
+    print(f"Results saved to {'results.json'}")
+
+    
 if __name__ == "__main__":
     main()

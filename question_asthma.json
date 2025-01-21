@@ -1,0 +1,97 @@
+[
+     
+        
+    
+    {
+        "question": "A 45-year-old patient, Ms. Roberts, presents with a history of moderate persistent asthma. She has been on medium-dose inhaled corticosteroids (ICS) and a long-acting beta2-agonist (LABA) for the past year. Her symptoms are well controlled most of the time, but she experiences worsening symptoms during seasonal changes. She is interested in learning about additional measures to reduce seasonal exacerbations. Ms. Roberts has no history of smoking, and spirometry shows moderate obstruction with significant reversibility. Allergy testing reveals sensitization to dust mites and pollen. What would be the most appropriate next step in her management to address her seasonal exacerbations?",
+        "options": [
+            "Increase the dose of her current ICS/LABA therapy during seasonal changes.",
+            "Add a leukotriene receptor antagonist (LTRA) to her current therapy to help with allergic triggers.",
+            "Initiate immunotherapy targeting her specific aeroallergens to improve long-term control.",
+            "Prescribe a short course of oral corticosteroids during seasonal changes to prevent exacerbations."
+        ],
+        "correct_answer_text": "Add a leukotriene receptor antagonist (LTRA) to her current therapy to help with allergic triggers.",
+        "correct_answer_idx": 2,
+        "reasoning": "The addition of a leukotriene receptor antagonist (LTRA), such as montelukast, is an effective strategy for patients with asthma triggered by allergic factors like dust mites and pollen. LTRAs have a favorable safety profile and are particularly beneficial"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {
+            "question": "A 6-year-old child with a history of recurrent wheezing, triggered by upper respiratory infections, presents to your clinic. The child's parent reports that the wheezing episodes have been occurring approximately every 2-3 months, significantly disrupting the child's sleep and daily activities. The child's current treatment consists of a short-acting beta2-agonist (SABA) for symptom relief as needed. Based on the guidelines provided, which of the following is the MOST appropriate next step in managing this child's asthma, considering both the potential benefits and harms of the treatment?",
+            "options": [
+                "Continue with SABA as needed and monitor for future exacerbations.",
+                "Start a daily inhaled corticosteroid (ICS) at a low dose for preventative management.",
+                "Initiate intermittent ICS at the start of each respiratory tract infection, along with as-needed SABA.",
+                 "Begin a combination therapy of ICS and long-acting beta2-agonist (LABA) daily."
+
+            ],
+            "correct_answer_text": "Initiate intermittent ICS at the start of each respiratory tract infection, along with as-needed SABA.",
+            "correct_answer_idx": 2,
+            "reasoning": "According to the provided guidelines, for children with recurrent wheezing triggered by respiratory tract infections, intermittent ICS with SABA at the start of an RTI is conditionally recommended. This approach is supported by evidence showing a **33% relative risk reduction in exacerbations requiring systemic corticosteroids** compared to SABA alone [1]. While daily ICS is another option, the guidelines support the use of intermittent ICS specifically for this clinical scenario in this age group. The other options are less appropriate based on the guidelines.",
+             "model_answer_text": null,
+              "model_answer_idx": null,
+            "is_correct": null
+        },
+        {
+            "question": "A 28-year-old patient with persistent allergic asthma is being evaluated for the effectiveness of their current treatment, which includes a medium-dose inhaled corticosteroid (ICS) and a long-acting beta2-agonist (LABA). The patient reports that they continue to experience occasional asthma exacerbations, especially when exposed to known indoor allergens. Their most recent Asthma Control Test (ACT) score is 20, and spirometry shows mild obstruction. A Fractional Exhaled Nitric Oxide (FeNO) test is considered, and the patient expresses concerns about the implications of the test result on treatment decisions. Based on the provided guidelines, how should FeNO measurements be utilized in this patient's management, and what are the limitations that need to be considered?",
+            "options": [
+                "FeNO measurement should be used as a definitive measure to adjust anti-inflammatory therapies, aiming to achieve a specific FeNO cutpoint.",
+                "FeNO measurements can be used as part of an ongoing asthma monitoring and management strategy in conjunction with other assessments, with the goal to prevent exacerbations.",
+                "FeNO measurements should not be used since there is not an established cut point to make decision.",
+               "FeNO measurement should replace spirometry in monitoring the response to treatment."
+            ],
+             "correct_answer_text": "FeNO measurements can be used as part of an ongoing asthma monitoring and management strategy in conjunction with other assessments, with the goal to prevent exacerbations.",
+            "correct_answer_idx": 1,
+            "reasoning": "The guidelines conditionally recommend the addition of FeNO measurement in individuals with persistent allergic asthma when there is uncertainty in choosing, monitoring, or adjusting anti-inflammatory therapies [2]. The guidelines state that **FeNO should be part of an ongoing asthma management strategy that includes frequent assessments** to prevent exacerbations. It's also important to note that FeNO levels may be affected by other conditions and that **no evidence-based FeNO cutpoints are available for choosing, monitoring, or adjusting anti-inflammatory therapies** [3, 4]. Therefore FeNO measurements should be interpreted in conjunction with other clinical data and not used as a standalone determinant of treatment adjustments [4].",
+            "model_answer_text": null,
+             "model_answer_idx": null,
+            "is_correct": null
+        },
+         {
+           "question": "A 45-year-old patient with severe persistent asthma, currently managed with high-dose inhaled corticosteroids (ICS) and a long-acting beta2-agonist (LABA), reports ongoing symptoms, frequent exacerbations, and a significantly reduced quality of life. Despite optimal adherence to their medication regimen, the patient’s asthma remains poorly controlled. The patient is asking about treatment options to improve their condition. Based on the information provided, what should be considered in this patient’s management, and what are the limitations associated with this treatment strategy?",
+            "options": [
+                "Adding a long-acting muscarinic antagonist (LAMA) to the current therapy, since this will improve asthma control.",
+                 "Initiating single maintenance and reliever therapy (SMART) using an ICS-LABA inhaler.",
+                "Proceeding with bronchial thermoplasty (BT) immediately without any further assessments.",
+                "Adding sublingual immunotherapy (SLIT) to improve asthma symptoms and prevent exacerbation."
+            ],
+            "correct_answer_text": "Initiating single maintenance and reliever therapy (SMART) using an ICS-LABA inhaler.",
+            "correct_answer_idx": 1,
+             "reasoning": "For individuals with persistent asthma who have not achieved adequate control with ICS and LABA, the guidelines conditionally recommend single maintenance and reliever therapy (SMART). **SMART has been shown to reduce the relative risk of exacerbations by 25%** [5]. While the guidelines note that LAMAs may reduce exacerbations compared to placebo [6], they also indicate that adding a LAMA to an ICS-LABA combination is not favored [7]. **Bronchial Thermoplasty (BT) should only be considered after other treatment options have been evaluated** [8] and SCIT is indicated for allergic asthma. Therefore, SMART is the most appropriate option based on the information provided for the given clinical scenario. The Expert Panel does not recommend LAMA as an add on to ICS+LABA [9].",
+             "model_answer_text": null,
+             "model_answer_idx": null,
+            "is_correct": null
+        },
+        {
+            "question": "A 35-year-old patient with a history of asthma and known dust mite allergy presents to your clinic for a routine follow-up. The patient reports that, despite using a low-dose inhaled corticosteroid (ICS) daily and a short-acting beta2-agonist (SABA) as needed, they continue to experience mild asthma symptoms, particularly at night and in the morning. The patient’s living situation involves older carpets and a bedroom with a lot of soft furnishings. The patient is interested in non-pharmacological strategies to manage their asthma. Based on the provided guidelines, what recommendations would you provide regarding allergen mitigation strategies in this patient’s home environment, and why?",
+           "options": [
+                "Recommend the use of impermeable pillow and mattress covers as a single component intervention.",
+                 "Advise using HEPA air purifiers as a single intervention to mitigate dust mites.",
+                "Recommend a multi-component allergen-specific mitigation strategy, such as using impermeable covers and reducing soft furnishings.",
+               "Recommend that the patient move into a newer building without carpet."
+            ],
+           "correct_answer_text": "Recommend a multi-component allergen-specific mitigation strategy, such as using impermeable covers and reducing soft furnishings.",
+           "correct_answer_idx": 2,
+            "reasoning": "The guidelines conditionally recommend a **multi-component allergen-specific mitigation strategy for individuals with sensitization or symptoms related to identified indoor allergens** [10-12]. This approach is more effective than single-component interventions [13]. **Impermeable pillow and mattress covers are recommended only as part of a multicomponent intervention and not as a single measure** [10-12]. Single interventions, such as using air purifiers alone, are not as effective as combining multiple approaches [13]. Therefore a multi-component strategy that considers the patient's environment (old carpets, soft furnishing), and addresses dust mite allergen exposure is the most appropriate option based on the guidelines.",
+             "model_answer_text": null,
+             "model_answer_idx": null,
+            "is_correct": null
+        }
+    
+
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "question": "A 45-year-old patient, Ms. Roberts, presents with a history of moderate persistent asthma. She has been on medium-dose inhaled corticosteroids (ICS) and a long-acting beta2-agonist (LABA) for the past year. Her symptoms are well controlled most of the time, but she experiences worsening symptoms during seasonal changes. She is interested in learning about additional measures to reduce seasonal exacerbations. Ms. Roberts has no history of smoking, and spirometry shows moderate obstruction with significant reversibility. Allergy testing reveals sensitization to dust mites and pollen. What would be the most appropriate next step in her management to address her seasonal exacerbations?",
+    "context": "If allergy testing is positive and appears clinically relevant based on individual assessment, management may include environmental control measures, pharmacologic therapy, or immunotherapy as an immunomodulating approach. There are, however, limited data to support that allergen avoidance and/or (Score: 0.8527)\nmanagement of ABRS patients with or without underlying allergy. (Score: 0.9153)\nABRS showed reduced sneezing and nasal congestion for loratadine vs placebo when used as an adjunct to antibiotics and oral corticosteroids.110 Antihistamine therapy, therefore, can be considered for patients with ABRS whose symptoms support a significant allergic component. In this regard, (Score: 0.9154)",
+    "model_answer": "B",
+    "model_answer_idx": 2,
+    "correct_answer_text": "Add a leukotriene receptor antagonist (LTRA) to her current therapy to help with allergic triggers.",
+    "correct_answer_idx": 2,
+    "reasoning": "The patient, Ms. Roberts, has moderate persistent asthma with a history of seasonal exacerbations linked to her sensitization to dust mites and pollen. In this context, adding a leukotriene receptor antagonist (LTRA), such as montelukast, is a well-supported strategy. LTRAs are effective in managing asthma symptoms triggered by allergic factors and can help reduce the frequency and severity of exacerbations during seasonal changes. They have a favorable safety profile and can complement her existing therapy of inhaled corticosteroids (ICS) and long-acting beta2-agonists (LABA). \n\nIncreasing the dose of her current ICS/LABA therapy may provide some benefit but does not specifically address the allergic triggers. Initiating immunotherapy could be beneficial for long-term control but may not provide immediate relief for her seasonal symptoms. Prescribing a short course of oral corticosteroids is generally reserved for acute exacerbations rather than for preventive measures during seasonal changes. Therefore, the most appropriate next step in her management is to add an LTRA to her current therapy to help with allergic triggers.",
+    "is_correct": true
+  },
+  {
+    "evaluation_metrics": {
+      "accuracy": 1.0,
+      "total": 1,
+      "correct": 1,
+      "confusion_matrix": {
+        "Pred A": {
+          "True A": 0,
+          "True B": 0,
+          "True C": 0,
+          "True D": 0
+        },
+        "Pred B": {
+          "True A": 0,
+          "True B": 1,
+          "True C": 0,
+          "True D": 0
+        },
+        "Pred C": {
+          "True A": 0,
+          "True B": 0,
+          "True C": 0,
+          "True D": 0
+        },
+        "Pred D": {
+          "True A": 0,
+          "True B": 0,
+          "True C": 0,
+          "True D": 0
+        }
+      }
+    }
+  }
+]
