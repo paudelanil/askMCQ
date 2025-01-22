@@ -121,3 +121,9 @@ ipython_config.py
 __pypackages__/
 
 config/
+
+.env
+
+config/config.yaml
+/data/parsed_markdown
+/data/raw

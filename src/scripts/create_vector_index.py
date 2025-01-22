@@ -3,15 +3,15 @@ import os
 import sys
 from parser import parse_pdfs_to_markdown
 from splitter import split_markdown_files
-from chroma_db import create_chroma_index
+from chroma_db import create_chroma_index, init_chroma, upsert_index
 
 # Add the project root directory to the Python path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.append(project_root)
 
 # Directories
-INPUT_DIR = "data/raw/NewMedCollection"  # Directory containing PDF files
-OUTPUT_DIR = "data/parsed_markdown"  # Directory to save parsed Markdown files
+INPUT_DIR = "data/raw/Liver"  # Directory containing PDF files
+OUTPUT_DIR = "data/parsed_markdown_liver"  # Directory to save parsed Markdown files
 CHROMA_PERSIST_DIR = "data/chroma_db"  # Directory to persist ChromaDB
 
 # LlamaParse Configuration
@@ -46,7 +46,9 @@ def main():
     )
 
     # Step 3: Create ChromaDB index
-    vectorstore = create_chroma_index(splits, CHROMA_PERSIST_DIR)
+    # vectorstore = create_chroma_index(splits, CHROMA_PERSIST_DIR)
+    vector_store = init_chroma(CHROMA_PERSIST_DIR)
+    vector_store = upsert_index(vector_store, splits)
     print(f"ChromaDB index created with {len(splits)} chunks.")
 
 if __name__ == "__main__":

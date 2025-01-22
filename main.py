@@ -1,6 +1,7 @@
 import os
 import json
 from src.retrieval_agent import RetrievalAgent
+from src.mutliquery_retreival import MultiQueryRetrievalAgent
 from sklearn.metrics import confusion_matrix
 import pandas as pd
 
@@ -34,7 +35,7 @@ def evaluate_model(questions_data):
         y_pred.append(q["model_answer_idx"])
 
     # Compute confusion matrix
-    confusion = confusion_matrix(y_true, y_pred, labels=[1, 2, 3, 4])
+    confusion = confusion_matrix(y_true, y_pred, labels=[0, 1,2, 3])
     confusion_df = pd.DataFrame(
         confusion,
         index=["True A", "True B", "True C", "True D"],
@@ -48,18 +49,22 @@ def evaluate_model(questions_data):
         "confusion_matrix": confusion_df.to_dict()
     }
 
-def main():
+def evaluate_questions(source,destinaion):
+    """
+    Evaluates a single question and returns the results.
+    """
 
-    # Load questions from JSON
-    with open("notebook/question_asthma.json", "r") as f:
-        questions_data = json.load(f)
+    with open(source, "r") as f:
+        question_data = json.load(f)
 
-    # Initialize the RetrievalAgent
-    agent = RetrievalAgent()
-
-    # Process questions
-    results =  agent.process_questions(questions_data[0:1])
-
+    # agent = MultiQueryRetrievalAgent(forEvaluate=True)
+    agent = RetrievalAgent(forEvaluate=True)
+    results = agent.process_questions(question_data)
+    
+    
+    with open(destinaion, "w") as f:
+        json.dump(results, f, indent=2)
+    # Evaluate the model
     evaluation_metrics = evaluate_model(results)
 
     # Add evaluation metrics to the results
@@ -67,11 +72,14 @@ def main():
         "evaluation_metrics": evaluation_metrics
     })
 
-    # Save results
-    with open('results.json', "w") as f:
+    with open('after_evaluation_similarity.json', "w") as f:
         json.dump(results, f, indent=2)
-    print(f"Results saved to {'results.json'}")
+
+    print("Results saved to ", destinaion)
+
+    return results
+
 
     
 if __name__ == "__main__":
-    main()
+    evaluate_questions('question_with_gt_context_update.json','final_response_similartyscore.json')

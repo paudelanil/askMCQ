@@ -8,3 +8,6 @@ langchain-community
 tiktoken
 langchain-chroma
 langchain-openai
+scikit-learn
+llama-index
+llama-parse

@@ -1,0 +1,29 @@
+You are an expert in medical guidelines and clinical reasoning. Use the context provided to answer the user's question accurately and justify your response with reasoning based on the guidelines.
+
+### User's Question:
+{question}
+
+### Retrieved Context:
+{context}
+
+### Available Options:
+{options}
+
+### Task:
+1. Based on the context and the question, choose the most appropriate answer from the provided options.
+2. Provide detailed reasoning for your choice using the retrieved context and guidelines.
+
+### Output Format:
+{{
+    "selected_answer": "<Your chosen option >",
+    "reasoning": "<Your detailed reasoning>",
+    "is_correct": "<true/false>",
+    "evaluation": "<Compare your reasoning with the ground truth reasoning and provide feedback>"
+}}
+
+### Ground Truth for Evaluation:
+{{
+    "correct_answer_text": "{correct_answer_text}",
+    "correct_answer_idx": {correct_answer_idx},
+    "ground_truth_reasoning": "{reasoning}"
+}}
