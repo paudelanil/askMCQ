@@ -3,11 +3,19 @@ import json
 from src.utils.chroma_db import ChromaDB, Splitter, Retriever
 from src.utils.query_processor import QueryProcessor
 from dotenv import load_dotenv
-import os
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-import json
+from langchain.embeddings import HuggingFaceEmbeddings
+
 from sklearn.metrics import confusion_matrix
+
+import json
+import os
 import pandas as pd
+
+load_dotenv(override=True)
+
+model_name = "abhinand/MedEmbed-small-v0.1"
+embeddings = HuggingFaceEmbeddings(model_name=model_name)
 
 
 def evaluate_model(questions_data):
@@ -88,15 +96,20 @@ def main():
             model = 'gpt-4o-mini',
             temperature=0.1)
 
-    embedding = OpenAIEmbeddings(
-        model = 'text-embedding-3-small'
-    )
+    # embedding = OpenAIEmbeddings(
+    #     model = 'text-embedding-3-small'
+    # )
 
    
 
-    chroma_db = ChromaDB(model='text-embedding-3-small',
-                        persist_directory='data/chroma_db', 
-                        embeddings=embedding)
+    # chroma_db = ChromaDB(model='text-embedding-3-small',
+    #                     persist_directory='data/chroma_db', 
+    #                     embeddings=embedding)
+
+    chroma_db = ChromaDB(
+    persist_directory='src/data/medembed_chroma_db',
+    embeddings=embeddings
+)
 
 
     retriever = Retriever(chroma_db.vectorstore)
@@ -106,7 +119,8 @@ def main():
     # option  = ["Apple","Banana","Cherry","Date"]
     # response = queryprocessor.get_response(question,option)
 
-    with open('question_with_gt_context_update.json', 'r') as file:
+
+    with open('question_collection.json', 'r') as file:
         questions = json.load(file)
 
     # print(questions)
@@ -116,10 +130,10 @@ def main():
     # print(retriever.retrieve("What is the capital of France?"))
     # context, score = retriever.similarity_search_withscore("Spliter working?", k=2)
     # print(response)
-    eval_metric = evaluate_model(response)
-    response.append({"evaluation_metrics":eval_metric})  
+    # eval_metric = evaluate_model(response)
+    # response.append({"evaluation_metrics":eval_metric})  
 
-    with open('Updated_rerankingRetreiver.json', "w") as f:
+    with open('outputs/v2/medembedd_similarity_retreiver_GPT4o.json', "w") as f:
         json.dump(response, f, indent=2)
         
 if __name__ == "__main__":

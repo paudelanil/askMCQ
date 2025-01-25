@@ -13,8 +13,7 @@ from typing import List, Dict, Tuple
 import os
 
 class ChromaDB:
-    def __init__(self, model, persist_directory,embeddings):
-        self.model = model
+    def __init__(self, persist_directory,embeddings):
         self.persist_directory = persist_directory
         self.vectorstore = None
         self.embeddings = embeddings

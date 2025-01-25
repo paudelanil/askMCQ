@@ -10,14 +10,23 @@ from src.utils.chroma_db import ChromaDB, Splitter
 from langchain_openai import OpenAIEmbeddings
 
 
-# Initialize embedding model
-embedding = OpenAIEmbeddings(model='text-embedding-3-small')
 
-# Initialize ChromaDB
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.vectorstores import Chroma
+from langchain.schema import Document
+
+# Step 1: Initialize SentenceTransformer embeddings with LangChain
+model_name = "abhinand/MedEmbed-small-v0.1"
+embeddings = HuggingFaceEmbeddings(model_name=model_name)
+# embeddings = OpenAIEmbeddings(model='text-embedding-3-small')
+
+
+
+# Step 2: Initialize Chroma vector store
+
 chroma_db = ChromaDB(
-    model='text-embedding-3-small',
-    persist_directory='src/data/chroma_db',
-    embeddings=embedding
+    persist_directory='src/data/medembed_chroma_db',
+    embeddings=embeddings
 )
 
 # Initialize Splitter
