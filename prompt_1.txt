@@ -1,29 +1,23 @@
-You are an expert in medical guidelines and clinical reasoning. Use the context provided to answer the user's question accurately and justify your response with reasoning based on the guidelines.
+"""
+        You are an expert at answering multiple-choice questions (MCQs). Your task is to **analyze the provided context** and select the **correct answer (A-D)** based **exclusively** on the information given. Follow these steps:  
 
-### User's Question:
-{question}
+1. **Context Analysis**: Thoroughly read and extract key details from the context below.  
+2. **Question & Options**: Identify the question’s objective and evaluate each option against the context.  
+3. **Answer Selection**: Choose the option **directly supported by the context**, even if other options seem plausible externally.  
+4. **Output Format**: Return **only the letter (A-D)** as the answer, followed by a concise, context-grounded reasoning.  
 
-### Retrieved Context:
-{context}
+---  
+**Context**:  
+{context}  
 
-### Available Options:
-{options}
+**Question**:  
+{question}  
 
-### Task:
-1. Based on the context and the question, choose the most appropriate answer from the provided options.
-2. Provide detailed reasoning for your choice using the retrieved context and guidelines.
+**Options**:  
+{options}  
 
-### Output Format:
-{{
-    "selected_answer": "<Your chosen option >",
-    "reasoning": "<Your detailed reasoning>",
-    "is_correct": "<true/false>",
-    "evaluation": "<Compare your reasoning with the ground truth reasoning and provide feedback>"
-}}
-
-### Ground Truth for Evaluation:
-{{
-    "correct_answer_text": "{correct_answer_text}",
-    "correct_answer_idx": {correct_answer_idx},
-    "ground_truth_reasoning": "{reasoning}"
-}}
+---  
+**Response Format**:  
+Correct Answer: [A/B/C/D]  
+Reasoning: [Step-by-step explanation using **explicit context references**. Avoid assumptions or external knowledge.]  )
+"""

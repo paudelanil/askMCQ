@@ -1,0 +1,395 @@
+
+[
+    {
+        "question": "A 68-year-old male with a history of hypertension and type 2 diabetes presents with a 7-day history of cough, fever, and purulent nasal discharge. He reports no improvement with over-the-counter cold medications. What is the most appropriate next step in management?",
+        "options": [
+            "Initiate oral azithromycin for presumed community-acquired pneumonia (CAP)",
+            "Prescribe a short course of oral prednisone for symptomatic relief",
+             "Begin a course of amoxicillin with or without clavulanate for possible acute bacterial rhinosinusitis (ABRS)",
+            "Order a chest x-ray to evaluate for pneumonia"
+        ],
+        "correct_answer_text": "Begin a course of amoxicillin with or without clavulanate for possible acute bacterial rhinosinusitis (ABRS)",
+        "correct_answer_idx": 3,
+        "reasoning": "The patient's symptoms of fever, purulent nasal discharge, and lack of improvement with over-the-counter medications suggest **acute bacterial rhinosinusitis (ABRS)**. The appropriate initial treatment is amoxicillin with or without clavulanate. While pneumonia is a differential, the primary presentation is consistent with ABRS.  Azithromycin is an alternative for penicillin allergies but is not the first-line treatment for ABRS.",
+     "ground_truth_context":"For acute bacterial rhinosinusitis (ABRS), amoxicillin with or without clavulanate is a recommended antibiotic. If a patient is allergic to penicillin, doxycycline or a respiratory quinolone can be used. Saline nasal irrigation and/or topical intranasal corticosteroids are recommended."
+    },
+    {
+        "question": "A 55-year-old female with a history of chronic kidney disease (CKD) and hypertension is started on a new medication for her blood pressure. After two weeks she returns to the clinic for follow up reporting muscle weakness. Her labs show an increase in serum potassium. What is the most appropriate next step?",
+        "options": [
+            "Discontinue the new blood pressure medication immediately.",
+           "Add a potassium-binding agent and continue the medication, with dietary modification",
+            "Refer to nephrology for hemodialysis evaluation",
+             "Prescribe an oral diuretic and schedule a follow-up in one week"
+        ],
+         "correct_answer_text": "Add a potassium-binding agent and continue the medication, with dietary modification",
+        "correct_answer_idx": 2,
+        "reasoning": "The patient's hyperkalemia, likely from her new blood pressure medication, can often be managed without stopping the medication. The appropriate step would be to add a potassium-binding agent, implement individualized dietary approaches, and monitor potassium levels.  Discontinuing the medication should be considered as a last resort,.",
+        "ground_truth_context":"Hyperkalemia associated with RASi use can often be managed without stopping RASi. Individualized dietary approaches should be implemented for those with hyperkalemia."
+    },
+    {
+        "question": "A 72-year-old male with a history of stable ischemic heart disease (SIHD) is being discharged after a recent hospitalization for pneumonia, He has been on dual antiplatelet therapy (DAPT) for 12 months following a percutaneous coronary intervention (PCI). What is the most appropriate duration of DAPT at this point?",
+        "options": [
+            "Continue DAPT for an additional 12 months.",
+            "Stop DAPT and continue on aspirin alone.",
+            "Reduce DAPT to single antiplatelet therapy with clopidogrel",
+            "Reduce DAPT to single antiplatelet therapy with aspirin"
+        ],
+       "correct_answer_text": "Reduce DAPT to single antiplatelet therapy with aspirin",
+        "correct_answer_idx": 4,
+        "reasoning": "For patients with a history of ACS greater than one year prior, and who have since been stable, their condition is considered SIHD. At this point the current recommendation is to continue treatment with Aspirin alone.",
+       "ground_truth_context":"For purposes of this focused update, patients with a history of acute coronary syndrome (ACS) >1 year prior who have since remained free of recurrent ACS are considered to have transitioned to stable ischemic heart disease (SIHD) and are addressed in the section on SIHD."
+    },
+    {
+        "question": "A 30-year-old female presents to the emergency department with a generalized tonic-clonic seizure lasting 7 minutes. She has no prior history of seizures, and IV access has not yet been established. What is the most appropriate initial therapy?",
+        "options": [
+            "Intravenous lorazepam",
+            "Intramuscular midazolam",
+            "Intravenous fosphenytoin",
+            "Rectal diazepam"
+        ],
+        "correct_answer_text": "Intramuscular midazolam",
+        "correct_answer_idx": 2,
+         "reasoning":"In adults with convulsive status epilepticus and without established IV access, **intramuscular midazolam** is the recommended first-line therapy because it is efficacious and rapidly administered. Intravenous lorazepam is preferred if IV access is established. Fosphenytoin is second-line therapy. Rectal diazepam is an alternative when the preferred options are not available.",
+        "ground_truth_context":"In adults with convulsive status epilepticus, intramuscular midazolam, intravenous lorazepam, intravenous diazepam and intravenous phenobarbital are established as efficacious as initial therapy (Level A). Intra-muscular midazolam has superior effectiveness compared to intravenous lorazepam in adults with convulsive status epilepticus without established intravenous access (Level A)."
+    },
+    {
+         "question": "A 45-year-old male with a history of alcohol abuse presents with jaundice, ascites, and altered mental status. His labs indicate acute liver failure. He is hypotensive and requires volume resuscitation. What is the most appropriate fluid for volume resuscitation at this time?",
+        "options": [
+            "Normal saline",
+            "Albumin",
+           "Hypertonic saline",
+            "Dextrose 5% in water"
+        ],
+       "correct_answer_text":"Normal saline",
+       "correct_answer_idx": 1,
+       "reasoning": "Normal saline is the appropriate first line treatment for hypotension in acute liver failure, prior to considering albumin, which should be considered as a drug rather than as a simple resuscitative solution.",
+        "ground_truth_context":"If used in this context, albumin should be viewed more as a drug, than as a resuscitative solution."
+    },
+      {
+        "question": "A 60-year-old male with a history of primary open-angle glaucoma (POAG) has been using prescribed eye drops for the past year. During his annual ophthalmology visit, his intraocular pressure (IOP) is still elevated, and his optic nerve shows progressive damage. He reports variable adherence to his medication regimen. What is the most appropriate next step in management?",
+        "options": [
+            "Increase the dose of his current eye drops.",
+            "Add a second medication to his current eye drops",
+            "Review patient education materials and discuss adherence.",
+             "Refer for surgical intervention immediately."
+        ],
+        "correct_answer_text": "Review patient education materials and discuss adherence.",
+        "correct_answer_idx": 3,
+        "reasoning": "Patient education and adherence are crucial in the management of POAG. Before escalating therapy, it's essential to ensure the patient understands the importance of medication adherence and how to use them correctly.",
+        "ground_truth_context":"Patient education and informed participation in treatment decisions may improve adherence."
+    },
+       {
+        "question": "A 50-year-old female with rheumatoid arthritis (RA) has been on methotrexate for three months. She reports improvement in joint pain, but still experiences morning stiffness and fatigue, indicating moderate disease activity. What is the most appropriate next step?",
+        "options": [
+           "Add a biologic DMARD to her current methotrexate.",
+            "Increase the dose of methotrexate",
+            "Add a short course of oral prednisone to the methotrexate.",
+            "Continue methotrexate monotherapy for another 3 months"
+        ],
+         "correct_answer_text": "Continue methotrexate monotherapy for another 3 months",
+        "correct_answer_idx": 4,
+        "reasoning":"According to guidelines, initial treatment for moderate-to-high RA is with **methotrexate monotherapy** . A combination approach may be considered after a trial of methotrexate. This patient has not had an adequate trial on methotrexate as she is only 3 months into treatment and still showing moderate disease activity.",
+       "ground_truth_context":"Methotrexate monotherapy is conditionally recommended over the combination of methotrexate plus a bDMARD or tsDMARD."
+    },
+   {
+        "question": "A 22-year-old male presents with urethral discharge and dysuria for 3 days. A gram stain of the discharge shows gram-negative diplococci. Which of the following is the recommended treatment approach?",
+        "options": [
+            "Oral azithromycin monotherapy",
+            "Intramuscular ceftriaxone and oral azithromycin",
+             "Oral doxycycline for 7 days",
+            "Oral ciprofloxacin for 3 days"
+        ],
+         "correct_answer_text": "Intramuscular ceftriaxone and oral azithromycin",
+        "correct_answer_idx": 2,
+        "reasoning":"For gonococcal infections, the recommended treatment is **intramuscular ceftriaxone plus oral azithromycin**. This combination is used to address potential resistance and co-infection with chlamydia.",
+        "ground_truth_context":"Treatments for people with treatment failure of N. gonorrhoeae (genital or oropharyngeal). Included studies: randomized and non-randomized studies"
+    },
+     {
+        "question": "A 65-year-old male, recently hospitalized for an acute exacerbation of COPD, is being considered for discharge. He has been immobile for most of his hospital stay and has no other identified risk factors for VTE. Which VTE prophylaxis is recommended?",
+        "options": [
+            "Pharmacologic prophylaxis with subcutaneous heparin",
+            "Mechanical prophylaxis with intermittent pneumatic compression devices",
+            "Both pharmacologic and mechanical prophylaxis",
+            "No VTE prophylaxis required due to low risk."
+        ],
+         "correct_answer_text":"Pharmacologic prophylaxis with subcutaneous heparin",
+         "correct_answer_idx": 1,
+        "reasoning":"According to recommendations acutely ill medical patients such as those in this case,  should receive pharmacologic prophylaxis, such as heparin.",
+        "ground_truth_context":"Parenteral anticoagulant vs no parenteral anticoagulant in acutely ill medical patients. Summary of the evidence. We found 17 systematic reviews that addressed this question,51-67 with 25 studies29,30,68-89"
+    },
+    {
+        "question": "A 70-year-old female presents with cough, fever and shortness of breath. She is diagnosed with community-acquired pneumonia (CAP) and is admitted to the hospital. Her blood cultures taken on admission come back negative. What is the most appropriate step?",
+        "options": [
+            "Continue antibiotics for 7 days, regardless of clinical stability",
+            "Continue antibiotics until a validated measure of clinical stability is achieved and for no less than 5 days.",
+            "Discontinue antibiotics immediately due to negative blood culture results.",
+            "Switch antibiotics to oral therapy."
+        ],
+        "correct_answer_text":"Continue antibiotics until a validated measure of clinical stability is achieved and for no less than 5 days.",
+         "correct_answer_idx": 2,
+         "reasoning":"The duration of antibiotic therapy should be guided by a validated measure of clinical stability and continued for at least 5 days. Negative blood cultures do not indicate discontinuing treatment.",
+         "ground_truth_context":"Antibiotic therapy duration should be guided by a validated measure of clinical stability and should be continued until stability is achieved and for no less than 5 days."
+    },
+    {
+        "question": "A 62-year-old man with a history of heavy alcohol use presents with new onset jaundice, ascites, and confusion. His labs are suggestive of acute liver failure (ALF). He is hemodynamically stable and is being admitted for ongoing care. Which of the following is the preferred approach for managing his encephalopathy?",
+        "options": [
+            "Start intravenous steroids to reduce cerebral edema.",
+            "Initiate lactulose and rifaximin.",
+            "Maintain serum osmolarity above 320 mOsmol using hypertonic saline.",
+            "Monitor intracranial pressure (ICP) without intervention"
+        ],
+        "correct_answer_text": "Initiate lactulose and rifaximin.",
+        "correct_answer_idx": 2,
+        "reasoning": "The preferred approach for treating hepatic encephalopathy in ALF involves **lactulose and rifaximin**, which reduce the production and absorption of neurotoxins. Steroids are not recommended for treating elevated ICP in ALF. Serum osmolarity should be maintained below 320 mOsmol. ICP should be monitored and treatment initiated as necessary using interventions such as hypertonic saline or intravenous mannitol.",
+        "ground_truth_context": "Hypertonic saline or intravenous mannitol can be used to treat sustained surges in intracranial pressure (ICP). Steroids are not recommended for treating elevated ICP in ALF. Serum osmolarity should be maintained below 320 mOsmol with RRT as required."
+    },
+    {
+        "question": "A 48-year-old female with a 10-year history of type 1 diabetes is being screened for chronic kidney disease (CKD). Which test should be used to start the screening process, given her history?",
+         "options": [
+            "Urine dipstick for protein",
+            "Serum creatinine and calculate eGFR",
+            "24-hour urine collection for albumin",
+            "Kidney biopsy"
+        ],
+       "correct_answer_text": "Serum creatinine and calculate eGFR",
+        "correct_answer_idx": 2,
+        "reasoning": "The initial screening test for CKD is an **eGFR calculated using serum creatinine**. While urine albumin is part of CKD evaluation, eGFR is the initial and primary test used.",
+        "ground_truth_context":"As in the previous KDIGO Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease, the first method to evaluate GFR should be eGFRcr."
+    },
+    {
+        "question": "A 78-year-old male is diagnosed with acute bacterial rhinosinusitis (ABRS). He has a known penicillin allergy. Which antibiotic is most appropriate?",
+        "options": [
+            "Oral amoxicillin/clavulanate",
+            "Oral azithromycin",
+            "Oral doxycycline",
+            "Topical intranasal corticosteroids"
+        ],
+         "correct_answer_text": "Oral doxycycline",
+        "correct_answer_idx": 3,
+         "reasoning": "For patients with a penicillin allergy, **doxycycline** is a recommended alternative for treating ABRS. Azithromycin may be considered as an alternative to doxycycline. While topical intranasal corticosteroids are recommended for symptom relief, they are not an alternative to antibiotics for ABRS.",
+       "ground_truth_context":"For acute bacterial rhinosinusitis (ABRS), amoxicillin with or without clavulanate is a recommended antibiotic. If a patient is allergic to penicillin, doxycycline or a respiratory quinolone can be used."
+    },
+     {
+        "question": "A 28-year-old pregnant female at 32 weeks gestation is admitted to the hospital with a first-time seizure lasting 8 minutes.  IV access has been obtained. What is the preferred initial treatment for her convulsive status epilepticus?",
+        "options": [
+            "Intravenous phenytoin",
+            "Intramuscular midazolam",
+            "Intravenous lorazepam",
+             "Rectal diazepam"
+        ],
+      "correct_answer_text": "Intravenous lorazepam",
+        "correct_answer_idx": 3,
+        "reasoning":"For a patient with convulsive status epilepticus with established IV access, **intravenous lorazepam** is the recommended initial therapy. Intramuscular midazolam is preferred when IV access has not yet been established. Phenytoin is an acceptable alternative second line medication. Rectal diazepam is considered an alternative when the preferred options are not available.",
+        "ground_truth_context":"In adults with convulsive status epilepticus, intramuscular midazolam, intravenous lorazepam, intravenous diazepam and intravenous phenobarbital are established as efficacious as initial therapy (Level A). Intra-muscular midazolam has superior effectiveness compared to intravenous lorazepam in adults with convulsive status epilepticus without established intravenous access (Level A)."
+    },
+    {
+        "question": "A 52-year-old male with a history of chronic liver disease presents with worsening ascites and is being evaluated for possible liver transplant. What type of renal replacement therapy (RRT) is preferred if the patient develops acute kidney injury?",
+         "options": [
+            "Intermittent hemodialysis",
+           "Continuous renal replacement therapy (CRRT)",
+             "Peritoneal dialysis",
+             "No RRT is indicated at this time"
+        ],
+       "correct_answer_text": "Continuous renal replacement therapy (CRRT)",
+        "correct_answer_idx": 2,
+       "reasoning":"For patients with acute liver failure and acute kidney injury, **continuous renal replacement therapy (CRRT)** is preferred over intermittent hemodialysis to avoid metabolic and hemodynamic fluctuations.",
+       "ground_truth_context":"Continuous renal replacement therapy (RRT) is preferred over intermittent dialysis to avoid metabolic and hemodynamic fluctuations."
+    },
+    {
+        "question": "A 68-year-old male with established primary open-angle glaucoma (POAG) is using a single eye drop medication. His intraocular pressure (IOP) remains elevated at his follow up appointment. What is the next step in the treatment of this patient?",
+         "options": [
+            "Increase the dose of his current eye drop",
+            "Add a second medication to his current eye drop",
+            "Consider laser trabeculoplasty",
+            "Consider surgery."
+        ],
+        "correct_answer_text":"Add a second medication to his current eye drop",
+        "correct_answer_idx": 2,
+        "reasoning":"When a single medication is not adequate to manage POAG, adding a second medication is the preferred next step in management before considering laser trabeculoplasty or surgery.",
+        "ground_truth_context":"Patient education and informed participation in treatment decisions may improve adherence."
+    },
+     {
+        "question": "A 58-year-old female with rheumatoid arthritis (RA) is currently treated with methotrexate, but is still having persistent moderate disease activity. Which of the following is the next recommended step?",
+        "options": [
+            "Add a targeted synthetic DMARD (tsDMARD)",
+            "Increase the dose of methotrexate",
+            "Add a biologic DMARD (bDMARD)",
+             "Add a short course of oral prednisone"
+        ],
+         "correct_answer_text":"Add a biologic DMARD (bDMARD)",
+        "correct_answer_idx": 3,
+        "reasoning": "According to the guidelines, if a patient on methotrexate monotherapy continues to have moderate disease activity, the next recommended step would be to add a **biologic DMARD** or a targeted synthetic DMARD.",
+        "ground_truth_context":"Methotrexate monotherapy is conditionally recommended over the combination of methotrexate plus a bDMARD or tsDMARD."
+    },
+  {
+         "question": "A 26-year-old male is diagnosed with uncomplicated gonorrhea. He has no known drug allergies. What is the recommended treatment regimen?",
+         "options": [
+            "Oral azithromycin 1 gram single dose",
+           "Oral doxycycline 100 mg twice daily for 7 days",
+           "Intramuscular ceftriaxone 500mg and oral azithromycin 1 gram single dose",
+            "Oral ciprofloxacin 500mg twice daily for 3 days"
+        ],
+         "correct_answer_text":"Intramuscular ceftriaxone 500mg and oral azithromycin 1 gram single dose",
+        "correct_answer_idx": 3,
+        "reasoning":"For uncomplicated gonorrhea, the current recommendation is **intramuscular ceftriaxone plus oral azithromycin**, given as a single dose.",
+         "ground_truth_context":"Treatments for people with treatment failure of N. gonorrhoeae (genital or oropharyngeal). Included studies: randomized and non-randomized studies"
+    },
+      {
+        "question": "A 55-year-old female is hospitalized for an acute illness. She has no prior history of venous thromboembolism (VTE). She is being considered for discharge. What should the VTE risk stratification for her take into account?",
+        "options": [
+            "Her age alone",
+            "Her length of stay alone.",
+            "Her risk factors for VTE and length of stay.",
+            "Her comorbidities alone."
+        ],
+        "correct_answer_text": "Her risk factors for VTE and length of stay.",
+        "correct_answer_idx": 3,
+        "reasoning":"VTE risk assessment considers **both risk factors for VTE and length of stay**. Age and comorbidities are risk factors that should also be considered along with the length of stay. ",
+        "ground_truth_context":"Parenteral anticoagulant vs no parenteral anticoagulant in acutely ill medical patients. Summary of the evidence. We found 17 systematic reviews that addressed this question,51-67 with 25 studies29,30,68-89"
+    },
+  {
+        "question": "A 67-year-old male with a history of COPD and recent hospitalization for pneumonia is now clinically stable and ready for discharge. What is the recommended duration for his antibiotic treatment?",
+         "options": [
+            "Continue antibiotics for 7 days.",
+            "Continue antibiotics for 10 days.",
+            "Continue antibiotics until clinical stability is achieved and for at least 5 days",
+            "Discontinue antibiotics at the time of discharge."
+        ],
+        "correct_answer_text": "Continue antibiotics until clinical stability is achieved and for at least 5 days",
+        "correct_answer_idx": 3,
+        "reasoning": "Antibiotic therapy for pneumonia should be continued **until a validated measure of clinical stability has been achieved and for no less than 5 days**. Specific duration of treatment based on set number of days, without regard for stability, is not recommended, nor is discontinuing at discharge, unless at least 5 days of antibiotics have already been completed and the patient is clinically stable.",
+       "ground_truth_context":"Antibiotic therapy duration should be guided by a validated measure of clinical stability and should be continued until stability is achieved and for no less than 5 days."
+    },
+
+    {
+        "question": "A 57-year-old male with a long history of heavy alcohol use presents with worsening jaundice, ascites, and new onset confusion. He is diagnosed with acute liver failure (ALF). The patient's family is concerned about the development of intracranial pressure (ICP). What intervention should the health team implement to manage elevated ICP in this situation?",
+       "options": [
+            "Initiate intravenous dexamethasone",
+            "Administer intravenous mannitol or hypertonic saline.",
+            "Reduce the amount of IV fluids to decrease fluid overload.",
+           "Administer intravenous albumin to increase intravascular volume."
+        ],
+         "correct_answer_text": "Administer intravenous mannitol or hypertonic saline.",
+       "correct_answer_idx": 2,
+        "reasoning":"The use of **hypertonic saline or intravenous mannitol** is recommended to treat sustained surges in ICP. Steroids are not recommended for treatment of elevated ICP in ALF. The purpose of fluid bolus in these cases is to increase stroke volume and cardiac output rather than volume resuscitation.",
+        "ground_truth_context":"Hypertonic saline or intravenous mannitol can be used to treat sustained surges in intracranial pressure (ICP). Steroids are not recommended for treating elevated ICP in ALF."
+    },
+      {
+        "question": "A 60-year-old female with type 2 diabetes is being evaluated for chronic kidney disease (CKD). Her initial eGFR based on serum creatinine is 50 mL/min/1.73 m². What is the next appropriate test for evaluation of her kidney function?",
+         "options": [
+            "Repeat serum creatinine measurement in 1 month",
+            "Measure cystatin C and calculate eGFR using both creatinine and cystatin C",
+            "24-hour urine collection for albumin",
+            "Perform kidney biopsy"
+        ],
+       "correct_answer_text": "Measure cystatin C and calculate eGFR using both creatinine and cystatin C",
+        "correct_answer_idx": 2,
+         "reasoning": "If eGFR based on creatinine is thought to be inaccurate or a more accurate assessment of GFR is needed, the next step is to measure cystatin C and calculate the **eGFR using both creatinine and cystatin C**. 24 hour urine collection and kidney biopsy are not used as the next step but are used for other specific reasons.  ",
+        "ground_truth_context":"If eGFRcr is expected to be inaccurate, or if a more accurate assessment of GFR is needed for clinical decision-making, such as diagnosis or staging of chronic kidney disease or drug dosing, then, if available, cystatin C should be measured, and creatinine and cystatin C–based estimated GFR (eGFRcr-cys) should be estimated."
+    },
+    {
+        "question": "A 75-year-old male with acute bacterial rhinosinusitis (ABRS) symptoms for 10 days, including purulent nasal discharge, facial pain, and fever, reports no improvement with initial saline irrigation. He is also started on amoxicillin/clavulanate. When should the patient be reassessed?",
+        "options": [
+            "Reassess in 1 week if symptoms are persistent.",
+           "Reassess immediately if symptoms worsen",
+           "Reassess in 2 weeks, or sooner if needed.",
+            "Reassess only if complications develop."
+        ],
+         "correct_answer_text": "Reassess in 1 week if symptoms are persistent.",
+       "correct_answer_idx": 1,
+        "reasoning": "Patients with ABRS should be reassessed **if symptoms persist after 7 days** on initial treatment, or if there is a worsening of symptoms.",
+         "ground_truth_context":"Define realistic expectations regarding clinical response to initial management and to articulate clearly when reassessment of the patient is warranted"
+    },
+    {
+       "question": "A 35-year-old male in the hospital is experiencing a seizure. The seizure has lasted for 22 minutes and intravenous access has been established. He was treated with lorazepam at 5 minutes. What is the most appropriate next step in managing his status epilepticus?",
+        "options": [
+             "Repeat the intravenous lorazepam dose.",
+            "Administer intravenous fosphenytoin.",
+            "Administer intramuscular midazolam.",
+            "Start a phenobarbital infusion."
+        ],
+       "correct_answer_text": "Administer intravenous fosphenytoin.",
+        "correct_answer_idx": 2,
+         "reasoning":"When a seizure continues after initial benzodiazepine therapy, the next recommended step is to administer a second line agent, such as fosphenytoin, valproic acid, or levetiracetam. Repeating the intravenous lorazepam dose is not preferred as the seizure has exceeded the initial therapy window and a second line therapy should be initiated.",
+        "ground_truth_context":"Reasonable options for second-line therapy include fosphenytoin, valproic acid, and levetiracetam."
+    },
+    {
+        "question":"A 65 year old patient with known cirrhosis and newly diagnosed hepatic encephalopathy is admitted to the hospital. She is stable and has a history of medication intolerance. Which is the preferred medication for hepatic encephalopathy?",
+          "options": [
+             "Lactulose",
+            "Rifaximin",
+            "Intravenous steroids",
+             "Oral neomycin"
+        ],
+         "correct_answer_text": "Lactulose",
+        "correct_answer_idx": 1,
+       "reasoning": "The preferred first line treatment for Hepatic encephalopathy is **Lactulose**. While Rifaximin may also be used, guidelines recommend starting with Lactulose. Intravenous steroids are not indicated in the management of HE. Oral neomycin is an alternative therapy but not first line. ",
+        "ground_truth_context":"Continuous renal replacement therapy (RRT) is preferred over intermittent dialysis to avoid metabolic and hemodynamic fluctuations. Hypertonic saline or intravenous mannitol can be used to treat sustained surges in intracranial pressure (ICP). Steroids are not recommended for treating elevated ICP in ALF."
+    },
+     {
+        "question": "A 50-year-old female with a diagnosis of primary open-angle glaucoma (POAG) has been treated with two different eye drop medications, but her intraocular pressure (IOP) is still not well controlled. What is the next step in her management?",
+         "options": [
+            "Consider laser trabeculoplasty",
+             "Increase the dose of the current eye drops",
+            "Add a third eye drop medication",
+            "Refer for glaucoma surgery immediately"
+        ],
+       "correct_answer_text": "Consider laser trabeculoplasty",
+        "correct_answer_idx": 1,
+        "reasoning":"When medications do not adequately control IOP, **laser trabeculoplasty** is the next logical step to be considered before surgery is considered. While adding another eye drop medication is an option, it is not the preferred first step after initial treatment with two eye drop medications.",
+       "ground_truth_context":"Patients should receive proper professional support and referrals when their conditions fail to respond to treatment."
+    },
+     {
+        "question": "A 45-year-old male with rheumatoid arthritis (RA) is on methotrexate monotherapy, but is still having moderate disease activity. He is now being started on a biologic DMARD (bDMARD). What is the best way to approach his current methotrexate therapy?",
+        "options": [
+            "Discontinue methotrexate at the time of starting the bDMARD",
+             "Reduce the dose of methotrexate while starting the bDMARD",
+            "Continue methotrexate at the same dose when starting the bDMARD",
+            "Stop methotrexate and start the bDMARD"
+        ],
+       "correct_answer_text":"Continue methotrexate at the same dose when starting the bDMARD",
+        "correct_answer_idx": 3,
+       "reasoning": "According to guidelines, when adding a bDMARD to methotrexate therapy, the recommendation is to **continue methotrexate at the current dose**. Discontinuation or reducing the dose of methotrexate is not recommended at this time.",
+        "ground_truth_context":"Continuation of DMARDs at the current dose is preferred over dose reduction, which is preferred over gradual discontinuation, which is preferred over abrupt discontinuation."
+    },
+    {
+        "question": "A 28-year-old male presents to the clinic with concern for possible gonorrhea. He reports a recent unprotected sexual encounter.  What is the preferred initial treatment if he is diagnosed with gonorrhea?",
+       "options": [
+            "Oral azithromycin 1 gram single dose",
+           "Oral doxycycline 100mg twice daily for 7 days",
+            "Intramuscular ceftriaxone 500 mg and oral azithromycin 1 gram single dose",
+            "Oral ciprofloxacin 500 mg twice daily for 3 days"
+        ],
+       "correct_answer_text":"Intramuscular ceftriaxone 500 mg and oral azithromycin 1 gram single dose",
+        "correct_answer_idx": 3,
+         "reasoning": "The recommended initial treatment for gonorrhea is a single dose of **intramuscular ceftriaxone along with a single dose of oral azithromycin**.",
+         "ground_truth_context":"Treatments for people with treatment failure of N. gonorrhoeae (genital or oropharyngeal). Included studies: randomized and non-randomized studies"
+    },
+    {
+        "question": "A 70-year-old patient is admitted to the hospital for an acute medical illness. They have limited mobility during the admission. What is the preferred initial method of VTE prophylaxis?",
+         "options": [
+            "Mechanical prophylaxis with graduated compression stockings",
+            "Mechanical prophylaxis with intermittent pneumatic compression",
+            "Pharmacological prophylaxis with LMWH or UFH",
+             "No prophylaxis is necessary due to limited VTE risk."
+        ],
+        "correct_answer_text": "Pharmacological prophylaxis with LMWH or UFH",
+        "correct_answer_idx": 3,
+       "reasoning":"For acutely ill medical patients, guidelines recommend **pharmacologic prophylaxis with a low molecular weight heparin (LMWH) or unfractionated heparin (UFH)**. Mechanical prophylaxis can be used in certain situations, but is not the preferred initial method",
+        "ground_truth_context":"LMWH vs UFH in acutely ill medical patients. Summary of the evidence. We found 8 systematic reviews51,52,54,58,59,63,65,67 that addressed this question and included 11 RCTs."
+    },
+    {
+        "question": "A 54 year-old male is admitted to the hospital with community-acquired pneumonia (CAP). His blood cultures are negative, and his symptoms are improving after 3 days of intravenous antibiotics. How long should he continue antibiotic therapy?",
+         "options": [
+           "Continue intravenous antibiotics for 7 days",
+            "Switch to oral antibiotics for 7 days",
+            "Continue intravenous antibiotics until clinical stability and then for 2 additional days",
+            "Continue antibiotics until clinical stability is achieved and for at least 5 days"
+        ],
+       "correct_answer_text":"Continue antibiotics until clinical stability is achieved and for at least 5 days",
+       "correct_answer_idx": 4,
+        "reasoning": "Antibiotic therapy for CAP should be continued until the patient achieves **clinical stability and for at least 5 days**. The route of administration of the antibiotic should be based on the patient’s ability to tolerate oral intake.",
+        "ground_truth_context":"Antibiotic therapy duration should be guided by a validated measure of clinical stability and should be continued until stability is achieved and for no less than 5 days."
+    }
+
+]

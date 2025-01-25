@@ -4,4 +4,11 @@ openai:
   llm_model: "gpt-4o-mini"
 
 chroma:
-  persist_directory: "data/processed/chroma_db"  # Directory to store Chroma data
+  persist_directory: "data/chroma_db"  # Directory to store Chroma data
+
+langsmith:
+  api_key: "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"
+  
+
+llamaparse:
+  api_key: "llx-Ubcx42TNLwT8Z006klcKfRKGD4RoMyiNSeH1OnxstRnbl18W"

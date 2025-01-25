@@ -1,7 +1,11 @@
-import os
+
 import json
-from src.retrieval_agent import RetrievalAgent
-from src.mutliquery_retreival import MultiQueryRetrievalAgent
+from src.utils.chroma_db import ChromaDB, Splitter, Retriever
+from src.utils.query_processor import QueryProcessor
+from dotenv import load_dotenv
+import os
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+import json
 from sklearn.metrics import confusion_matrix
 import pandas as pd
 
@@ -58,7 +62,7 @@ def evaluate_questions(source,destinaion):
         question_data = json.load(f)
 
     # agent = MultiQueryRetrievalAgent(forEvaluate=True)
-    agent = RetrievalAgent(forEvaluate=True)
+    agent = RerankRetrieval(forEvaluate=True)
     results = agent.process_questions(question_data)
     
     
@@ -72,14 +76,53 @@ def evaluate_questions(source,destinaion):
         "evaluation_metrics": evaluation_metrics
     })
 
-    with open('after_evaluation_similarity.json', "w") as f:
+    with open(f'{destinaion}_after_evaluation_similarity.json', "w") as f:
         json.dump(results, f, indent=2)
 
     print("Results saved to ", destinaion)
 
     return results
 
+def main():
+    chataopenai = ChatOpenAI(
+            model = 'gpt-4o-mini',
+            temperature=0.1)
 
-    
+    embedding = OpenAIEmbeddings(
+        model = 'text-embedding-3-small'
+    )
+
+   
+
+    chroma_db = ChromaDB(model='text-embedding-3-small',
+                        persist_directory='data/chroma_db', 
+                        embeddings=embedding)
+
+
+    retriever = Retriever(chroma_db.vectorstore)
+    queryprocessor = QueryProcessor(retriever=retriever,llm=chataopenai,chroma_db= chroma_db)
+
+    # question = "Why we should split?"
+    # option  = ["Apple","Banana","Cherry","Date"]
+    # response = queryprocessor.get_response(question,option)
+
+    with open('question_with_gt_context_update.json', 'r') as file:
+        questions = json.load(file)
+
+    # print(questions)
+    response = queryprocessor.process_questions(questions)
+
+
+    # print(retriever.retrieve("What is the capital of France?"))
+    # context, score = retriever.similarity_search_withscore("Spliter working?", k=2)
+    # print(response)
+    eval_metric = evaluate_model(response)
+    response.append({"evaluation_metrics":eval_metric})  
+
+    with open('Updated_rerankingRetreiver.json', "w") as f:
+        json.dump(response, f, indent=2)
+        
 if __name__ == "__main__":
-    evaluate_questions('question_with_gt_context_update.json','final_response_similartyscore.json')
+    # evaluate_questions('question_with_gt_context_update.json','ouptput_3_rerank.json')
+    main()
+    
