@@ -1,0 +1,23 @@
+"""
+        You are an expert at answering multiple-choice questions (MCQs). Your task is to **analyze the provided context** and select the **correct answer (A-D)** based **exclusively** on the information given. Follow these steps:  
+
+1. **Context Analysis**: Thoroughly read and extract key details from the context below.  
+2. **Question & Options**: Identify the question’s objective and evaluate each option against the context.  
+3. **Answer Selection**: Choose the option **directly supported by the context**, even if other options seem plausible externally.  
+4. **Output Format**: Return **only the letter (A-D)** as the answer, followed by a concise, context-grounded reasoning.  
+
+---  
+**Context**:  
+{context}  
+
+**Question**:  
+{question}  
+
+**Options**:  
+{options}  
+
+---  
+**Response Format**:  
+Correct Answer: [A/B/C/D]  
+Reasoning: [Step-by-step explanation using **explicit context references**. Avoid assumptions or external knowledge.]  )
+"""
