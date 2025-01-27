@@ -16,7 +16,8 @@ from langchain.vectorstores import Chroma
 from langchain.schema import Document
 
 # Step 1: Initialize SentenceTransformer embeddings with LangChain
-model_name = "abhinand/MedEmbed-small-v0.1"
+# model_name = "abhinand/MedEmbed-small-v0.1"
+model_name = "abhinand/MedEmbed-base-v0.1"
 embeddings = HuggingFaceEmbeddings(model_name=model_name)
 # embeddings = OpenAIEmbeddings(model='text-embedding-3-small')
 

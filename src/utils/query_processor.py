@@ -29,9 +29,10 @@ class QueryProcessor:
             str: The generated response, including the correct answer and reasoning.
         """
         # Step 1: Retrieve relevant context
-        # context, _ = self.retriever.similarity_search_withscore(question, k=k)
+        context, _ = self.retriever.similarity_search_withscore(question, k=k)
+        # context = self.retriever.rerank_documents(question, k=k)
 
-        context = self.retriever.rerank_documents(question, k=5)
+        # context = self.retriever.rerank_documents(question, k=5)
 
         with open('prompt_1.txt','r') as f:
             prompt_text = f.read()
