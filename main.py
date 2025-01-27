@@ -51,7 +51,7 @@ def main():
     # print(questions)
     response = queryprocessor.process_questions(questions)
 
-    with open('outputs/gpt4o_openaiembed_similarity.json', "w") as f:
+    with open('outputs/gpt4omini_medembed_similarity_contextimproved.json', "w") as f:
         json.dump(response, f, indent=2)
         
 if __name__ == "__main__":

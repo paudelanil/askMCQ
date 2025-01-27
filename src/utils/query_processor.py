@@ -28,13 +28,14 @@ class QueryProcessor:
         Returns:
             str: The generated response, including the correct answer and reasoning.
         """
+        question_with_options = f"{question}\n" + "\n".join(options) 
         # Step 1: Retrieve relevant context
-        context, _ = self.retriever.similarity_search_withscore(question, k=k)
+        context, _ = self.retriever.similarity_search_withscore(question_with_options, k=k)
         # context = self.retriever.rerank_documents(question, k=k)
 
         # context = self.retriever.rerank_documents(question, k=5)
 
-        with open('prompt_1.txt','r') as f:
+        with open('src/utils/prompts/prompts_1.txt','r') as f:
             prompt_text = f.read()
         # Step 2: Define the prompt template
         prompt_template = ChatPromptTemplate.from_template(prompt_text)
